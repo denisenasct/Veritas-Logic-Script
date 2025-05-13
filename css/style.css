@@ -1,76 +1,47 @@
 body {
-  background: linear-gradient(to right, #16222A, #3A6073);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #1b1b2f;
   color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 .container {
-  background-color: #1e1e2f;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  width: 90%;
-  max-width: 600px;
-  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
 }
 
-h1 {
-  font-size: 2em;
-  margin-bottom: 15px;
-  color: #FFD700;
+#avatar-img {
+  width: 150px;
+  margin: 15px auto;
+  display: block;
 }
 
-.intro {
-  font-style: italic;
-  margin-bottom: 25px;
-}
-
-.quiz-box {
-  margin-bottom: 20px;
-}
-
-.options {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+#story-box {
+  margin: 20px 0;
+  padding: 15px;
+  background: #2d2d44;
+  border-radius: 10px;
 }
 
 button {
-  background-color: #28a745;
-  color: white;
+  margin: 10px;
+  padding: 10px 20px;
+  background: #007bff;
   border: none;
-  padding: 12px 20px;
-  font-size: 1em;
-  border-radius: 8px;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #218838;
+  background: #0056b3;
 }
 
-.option-button {
-  background-color: #007BFF;
-  border: none;
-  padding: 10px;
-  border-radius: 6px;
-  font-size: 1em;
-  cursor: pointer;
-}
-
-.option-button:hover {
-  background-color: #0056b3;
-}
-
-#feedback {
-  margin-top: 15px;
-  font-weight: bold;
-  min-height: 20px;
+.high-contrast {
+  background: black;
+  color: yellow;
 }
