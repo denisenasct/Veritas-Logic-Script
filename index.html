@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Canvas para efeito Matrix -->
+  <!-- Canvas Matrix -->
   <canvas id="matrix"></canvas>
 
   <div class="container">
@@ -25,20 +25,21 @@
   <!-- Música de fundo -->
   <audio src="audio/music.mp3" autoplay loop hidden></audio>
 
-  <!-- Efeito Matrix -->
+  <!-- Códigos Matrix caindo -->
   <script>
     const canvas = document.getElementById("matrix");
     const ctx = canvas.getContext("2d");
-    canvas.height = window.innerHeight;
+
     canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
     const letters = "01";
     const fontSize = 16;
-    const columns = canvas.width / fontSize;
-    const drops = Array(Math.floor(columns)).fill(1);
+    const columns = Math.floor(canvas.width / fontSize);
+    const drops = Array(columns).fill(1);
 
     function drawMatrix() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = "#0F0";
       ctx.font = fontSize + "px monospace";
@@ -54,10 +55,15 @@
     }
 
     setInterval(drawMatrix, 66);
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
   </script>
 
   <!-- Lógica do jogo -->
   <script src="js/game.js"></script>
 </body>
 </html>
+
 
