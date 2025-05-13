@@ -1,10 +1,17 @@
-body {
+/* Reset universal para evitar margens e espaçamentos indesejados */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
   background-color: black;
   color: #00ff99;
   font-family: 'Courier New', monospace;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
 }
 
 .container {
@@ -12,8 +19,8 @@ body {
   margin: auto;
   padding: 40px;
   text-align: center;
-  z-index: 1;
   position: relative;
+  z-index: 1;
 }
 
 h1 {
@@ -60,6 +67,7 @@ h1 {
   font-size: 1.2em;
   line-height: 1.6;
   color: #d0ffd0;
+  white-space: pre-wrap;
 }
 
 #choices button {
@@ -88,30 +96,6 @@ button {
 }
 
 .high-contrast {
-  background-color: #000;
-  color: #FFD700;
-}
-
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-.terminal-blink {
-  animation: blinkTerminal 1s steps(2, start) infinite;
-  white-space: pre-wrap;
-  color: #00ff88;
-  font-family: monospace;
-  font-size: 1.1em;
-}
-
-@keyframes blinkTerminal {
-  0% { opacity: 1; }
-  50% { opacity: 0.4; }
-  100% { opacity: 1; }
-}
-.high-contrast {
   background-color: #ffffff !important;
   color: #000000 !important;
 }
@@ -133,3 +117,24 @@ canvas {
   background-color: #ffffff !important;
 }
 
+/* Efeito terminal */
+.terminal-blink {
+  animation: blinkTerminal 1s steps(2, start) infinite;
+  white-space: pre-wrap;
+  color: #00ff88;
+  font-family: monospace;
+  font-size: 1.1em;
+}
+
+@keyframes blinkTerminal {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
