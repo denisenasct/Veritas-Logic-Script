@@ -10,6 +10,7 @@
   <!-- Canvas Matrix -->
   <canvas id="matrix"></canvas>
 
+  <!-- Conteúdo do jogo -->
   <div class="container">
     <h1>Veritas.Logic: A Simulação</h1>
     <p class="intro-quote">“Este não é um quiz. É uma simulação. E você está dentro dela.”</p>
@@ -22,10 +23,10 @@
     <div id="choices"></div>
   </div>
 
-  <!-- Música de fundo -->
-  <audio id="bg-music" src="musica.mp3" autoplay loop></audio>
+  <!-- Música de fundo personalizada -->
+  <audio id="bg-music" src="music.mp3" autoplay loop></audio>
 
-  <!-- Códigos Matrix caindo -->
+  <!-- Matrix Effect -->
   <script>
     const canvas = document.getElementById("matrix");
     const ctx = canvas.getContext("2d");
@@ -47,6 +48,7 @@
       for (let i = 0; i < drops.length; i++) {
         const text = letters[Math.floor(Math.random() * letters.length)];
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
         if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
           drops[i] = 0;
         }
@@ -55,15 +57,26 @@
     }
 
     setInterval(drawMatrix, 66);
+
+    // Responsividade
     window.addEventListener('resize', () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     });
+
+    // Segurança para tocar música após interação (caso autoplay seja bloqueado)
+    document.body.addEventListener('click', () => {
+      const audio = document.getElementById('bg-music');
+      if (audio.paused) {
+        audio.play();
+      }
+    }, { once: true });
   </script>
 
   <!-- Lógica do jogo -->
   <script src="js/game.js"></script>
 </body>
 </html>
+
 
 
