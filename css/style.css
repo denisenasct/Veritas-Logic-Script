@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +10,7 @@ html, body {
   width: 100%;
   overflow-x: hidden;
   background-color: black;
-  color: #00ff99;
+  color: #ffffff;
   font-family: 'Courier New', monospace;
 }
 
@@ -24,13 +25,13 @@ html, body {
 
 h1 {
   font-size: 2.5em;
-  color: #00ffcc;
+  color: #ffffff;
   text-shadow: 0 0 15px #00ffaa;
 }
 
 .intro-quote {
   font-style: italic;
-  color: #66ffcc;
+  color: #cccccc;
   margin-bottom: 20px;
   font-size: 1.1em;
 }
@@ -48,7 +49,7 @@ h1 {
 
 #theme-banner {
   font-size: 1.3em;
-  color: #99ffcc;
+  color: #ffffff;
   margin: 10px 0 20px 0;
   text-shadow: 0 0 10px #009966;
 }
@@ -65,14 +66,16 @@ h1 {
 #story-text {
   font-size: 1.2em;
   line-height: 1.6;
-  color: #d0ffd0;
+  color: #ffffff;
   white-space: pre-wrap;
+  font-weight: bold;
 }
 
 #choices button {
   display: block;
   background-color: transparent;
-  color: #00ff99;
+  color: #ffffff;
+  font-weight: bold;
   border: 2px solid #00ff99;
   border-radius: 6px;
   padding: 12px 24px;
@@ -94,7 +97,6 @@ button {
   font-family: 'Courier New', monospace;
 }
 
-/* Efeito terminal */
 .terminal-blink {
   animation: blinkTerminal 1s steps(2, start) infinite;
   white-space: pre-wrap;
@@ -114,5 +116,10 @@ canvas {
   top: 0;
   left: 0;
   z-index: -1;
+  animation: slowMatrix 0.25s infinite linear;
 }
 
+@keyframes slowMatrix {
+  0% { opacity: 0.9; }
+  100% { opacity: 1; }
+}
