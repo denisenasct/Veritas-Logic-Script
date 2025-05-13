@@ -1,92 +1,85 @@
 const scenes = [
   {
-    theme: "Introdução",
+    theme: "A Simulação",
     avatar: "img/avatar-default.png",
-    text: "Você é uma lógica viva. A vila está em caos, dominada por fake news e manipulação. Seu dever: restaurar a clareza.",
+    text: "Você acorda. A realidade está borrada. A lógica foi distorcida. A IA controla a vila através de fake news e falácias. Este não é um quiz. É uma simulação. E você é a variável mais instável.",
     choices: [
-      { text: "Entrar no mundo das Fake News", next: 1 }
+      { text: "Infiltrar-se no sistema de desinformação", next: 1 },
+      { text: "Buscar a raiz lógica da corrupção", next: 2 }
     ]
   },
   {
-    theme: "Fake News Políticas",
+    theme: "Falácia do Consequente",
     avatar: "img/avatar-fakenews.png",
-    text: "Um político diz: 'Se sou honesto, então não há corrupção'. Você detecta algo errado...",
+    text: "Você entra no núcleo da propaganda. Um político digital diz: 'Se sou honesto, então não há corrupção'. Agora, há corrupção exposta. Mas ele diz que nunca foi honesto. Há algo errado... a simulação treme. Identifique a falha lógica e fragmente o argumento da IA.",
     choices: [
-      { text: "Negar a proposição logicamente", next: 2 },
-      { text: "Aceitar o argumento como válido", next: 3 }
+      { text: "Injetar código: (p → q) ∧ q ⇒ p", next: 3 },
+      { text: "Injetar código: q ∧ ¬p ⇒ erro lógico", next: 4 }
     ]
   },
   {
-    theme: "Corretamente negado",
+    theme: "De Morgan na prática",
     avatar: "img/avatar-fakenews.png",
-    text: "Você negou a implicação: 'Sou honesto e há corrupção'. A vila começa a despertar. Avançar?",
+    text: "A IA criptografou a frase: 'Não vacinado ou não doente significa sistema seguro'. Seu protocolo exige negar a expressão usando leis de De Morgan. Inicie a sequência lógica.",
     choices: [
-      { text: "Sim, rumo à guerra ética", next: 4 }
+      { text: "Executar: p ∧ q", next: 5 },
+      { text: "Executar: ¬p ∧ ¬q", next: 6 }
     ]
   },
   {
-    theme: "Ilusão aceita",
+    theme: "Erro de simulação",
     avatar: "img/avatar-default.png",
-    text: "A vila acredita em tudo. A IA se fortalece. Você volta ao ponto anterior.",
+    text: "Você aplicou a lógica incorreta. O sistema se fortaleceu. Retorne ao ponto de entrada e recompile o raciocínio.",
     choices: [
-      { text: "Tentar de novo", next: 1 }
+      { text: "Recompilar argumento", next: 1 }
     ]
   },
   {
-    theme: "Guerra e Ética",
-    avatar: "img/avatar-war.png",
-    text: "O general diz: 'Se há ameaça, então podemos atacar'. Mas houve ataque sem ameaça.",
+    theme: "Falha quebrada",
+    avatar: "img/avatar-health.png",
+    text: "Você aplicou: q ∧ ¬p. A IA falha em manter coerência. Um buraco de segurança se abre. A integridade lógica se reinstaura.",
     choices: [
-      { text: "Identificar falácia de afirmação do consequente", next: 5 },
-      { text: "Concordar com o ataque", next: 6 }
+      { text: "Avançar pelo túnel lógico", next: 7 }
     ]
   },
   {
-    theme: "Você venceu a falácia",
+    theme: "Porta lógica desbloqueada",
+    avatar: "img/avatar-health.png",
+    text: "Expressão negada com sucesso: ¬(¬p ∨ ¬q) ≡ p ∧ q. O sistema admite inconsistência. Uma brecha de lógica foi aberta. Um novo mundo está ao seu alcance.",
+    choices: [
+      { text: "Entrar na lógica central da IA", next: 7 }
+    ]
+  },
+  {
+    theme: "Código inválido",
+    avatar: "img/avatar-default.png",
+    text: "Expressão não reconhecida pela estrutura lógica. Reinicie a unidade de negação e tente novamente.",
+    choices: [
+      { text: "Reiniciar módulo De Morgan", next: 2 }
+    ]
+  },
+  {
+    theme: "Lógica de Controle",
     avatar: "img/avatar-war.png",
-    text: "Parabéns! Você venceu o discurso falacioso. A ética retorna à vila.",
+    text: "Você adentra o núcleo. Linhas de código descem do céu. A IA pergunta: Qual expressão equivale a (p → q)? Escolha o fragmento correto para acessar o Sistema Raiz.",
+    choices: [
+      { text: "Executar: ¬p ∨ q", next: 8 },
+      { text: "Executar: p ∧ ¬q", next: 9 }
+    ]
+  },
+  {
+    theme: "Acesso concedido",
+    avatar: "img/avatar-war.png",
+    text: "Equivalência reconhecida: (p → q) ≡ ¬p ∨ q. A IA começa a ruir. Códigos caem como chuva. O sistema precisa de reinicialização.",
     choices: []
   },
   {
-    theme: "Você caiu na falácia",
+    theme: "Acesso negado",
     avatar: "img/avatar-default.png",
-    text: "Você foi manipulado. Reiniciando...",
+    text: "Você usou a negação da implicação, não a equivalência. A IA desconfiou e blindou o núcleo. Reiniciar tentativa lógica?",
     choices: [
-      { text: "Recomeçar do capítulo Guerra", next: 4 }
+      { text: "Voltar ao núcleo lógico", next: 7 }
     ]
   }
 ];
 
-let currentScene = 0;
-
-function renderScene() {
-  const scene = scenes[currentScene];
-  document.getElementById("theme-banner").textContent = `🌍 Capítulo: ${scene.theme}`;
-  document.getElementById("avatar-img").src = scene.avatar;
-  document.getElementById("story-text").textContent = scene.text;
-
-  const choicesDiv = document.getElementById("choices");
-  choicesDiv.innerHTML = "";
-  scene.choices.forEach(choice => {
-    const btn = document.createElement("button");
-    btn.textContent = choice.text;
-    btn.onclick = () => {
-      playClick();
-      currentScene = choice.next;
-      renderScene();
-    };
-    choicesDiv.appendChild(btn);
-  });
-}
-
-function playClick() {
-  const audio = new Audio('click.mp3');
-  audio.volume = 0.4;
-  audio.play();
-}
-
-function toggleContrast() {
-  document.body.classList.toggle('high-contrast');
-}
-
-window.onload = renderScene;
