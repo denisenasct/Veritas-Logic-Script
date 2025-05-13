@@ -7,17 +7,12 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Fundo com efeito Matrix -->
-  <div class="matrix-bg">
-    <canvas id="matrix"></canvas>
-  </div>
+  <!-- Canvas para efeito Matrix -->
+  <canvas id="matrix"></canvas>
 
   <div class="container">
     <h1>Veritas.Logic: A Simulação</h1>
     <p class="intro-quote">“Este não é um quiz. É uma simulação. E você está dentro dela.”</p>
-
-    <!-- Botão REMOVIDO -->
-    <!-- <button onclick="toggleContrast()">Alto Contraste</button> -->
 
     <p id="theme-banner"></p>
     <img id="avatar-img" src="" alt="Avatar" />
@@ -37,17 +32,13 @@
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
 
-    const letters = "01".split("");
-    const fontSize = 14;
+    const letters = "01";
+    const fontSize = 16;
     const columns = canvas.width / fontSize;
-    const drops = [];
+    const drops = Array(Math.floor(columns)).fill(1);
 
-    for (let x = 0; x < columns; x++) {
-      drops[x] = 1;
-    }
-
-    function draw() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    function drawMatrix() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = "#0F0";
       ctx.font = fontSize + "px monospace";
@@ -55,7 +46,6 @@
       for (let i = 0; i < drops.length; i++) {
         const text = letters[Math.floor(Math.random() * letters.length)];
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
         if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
           drops[i] = 0;
         }
@@ -63,9 +53,10 @@
       }
     }
 
-    setInterval(draw, 33);
+    setInterval(drawMatrix, 66);
   </script>
 
+  <!-- Lógica do jogo -->
   <script src="js/game.js"></script>
 </body>
 </html>
