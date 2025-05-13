@@ -128,7 +128,7 @@ const scenes = [
   {
     theme: "Créditos - Console Hacker",
     avatar: "img/jessica.png",
-    text: "*** EXECUTANDO LOG: veritas.logic > /final.log\\n\\n>>> SISTEMA RESTAURADO\\n>>> Consciência: Ativa\\n>>> Verdade: Incompleta\\n>>> Código-fonte do mundo: corrompido\\n\\n*** AGRADECIMENTOS:\\nDenise Tavares — Engenheira da Realidade\\nIA Narrativa — ChatGPT4\\nTrilha Livre — Pixabay & Sons Éticos\\nInspirado por Matrix, Last of Us e Lógica Proposicional\\n\\n*** CONTINUE CODIFICANDO A VERDADE...\\n\\n~fim~",
+    text: "*** EXECUTANDO LOG: veritas.logic > /final.log\n\n>>> SISTEMA RESTAURADO\n>>> Consciência: Ativa\n>>> Verdade: Incompleta\n>>> Código-fonte do mundo: corrompido\n\n*** AGRADECIMENTOS:\nDenise Tavares — Engenheira da Realidade\nIA Narrativa — ChatGPT4\nTrilha Livre — Pixabay & Sons Éticos\nInspirado por Matrix, Last of Us e Lógica Proposicional\n\n*** CONTINUE CODIFICANDO A VERDADE...\n\n~fim~",
     choices: []
   }
 ];
@@ -144,7 +144,7 @@ function renderScene() {
 
   banner.textContent = `🌍 Capítulo: ${scene.theme}`;
   avatar.src = scene.avatar;
-  story.textContent = scene.text.replace(/\\n/g, "\n");
+  story.textContent = scene.text.replace(/\n/g, "\n"); // ✅ Correção aqui
   choicesDiv.innerHTML = "";
 
   if (scene.theme.includes("Créditos")) {
@@ -176,3 +176,4 @@ function toggleContrast() {
 }
 
 window.onload = renderScene;
+
