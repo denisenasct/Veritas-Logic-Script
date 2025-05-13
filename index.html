@@ -26,36 +26,6 @@
     canvas {
       display: block;
     }
-    .intro-quote {
-      font-style: italic;
-      margin-bottom: 20px;
-      color: #99ff99;
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 30px;
-      text-align: center;
-    }
-    button {
-      background: transparent;
-      border: 1px solid #00ff00;
-      color: #00ff00;
-      padding: 10px 20px;
-      margin: 10px;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #003300;
-    }
-    #avatar-img {
-      width: 150px;
-      margin: 10px auto;
-      display: block;
-      filter: drop-shadow(0 0 5px #00ff00);
-    }
   </style>
 </head>
 <body>
@@ -68,17 +38,19 @@
     <p class="intro-quote">“Este não é um quiz. É uma simulação. E você está dentro dela.”</p>
 
     <button onclick="toggleContrast()">Alto Contraste</button>
-    <p id="theme-banner">🌍 Capítulo: Iniciando...</p>
-    <img id="avatar-img" src="img/avatar-default.png" alt="Avatar" />
+    <p id="theme-banner"></p>
+    <img id="avatar-img" src="" alt="Avatar" />
 
     <div id="story-box">
-      <p id="story-text">Carregando narrativa...</p>
+      <p id="story-text"></p>
     </div>
 
     <div id="choices"></div>
   </div>
 
   <audio src="music.mp3" autoplay loop hidden></audio>
+
+  <!-- Matrix efeito -->
   <script>
     const canvas = document.getElementById("matrix");
     const ctx = canvas.getContext("2d");
@@ -113,8 +85,8 @@
 
     setInterval(draw, 33);
   </script>
+
   <script src="js/game.js"></script>
 </body>
 </html>
-
 
