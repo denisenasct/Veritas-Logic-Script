@@ -1,5 +1,6 @@
 const questions = [
   {
+    theme: "Lógica Básica",
     text: "(p ∨ q) → r. Se p é F e q é V, qual o valor de r para a proposição ser verdadeira?",
     options: ["V", "F", "Não é possível saber"],
     correct: "V",
@@ -10,6 +11,7 @@ const questions = [
     }
   },
   {
+    theme: "Lógica Básica",
     text: "Se ~p ∨ q é F, o que podemos afirmar sobre p e q?",
     options: ["p é F e q é V", "p é V e q é F", "p é V e q é V"],
     correct: "p é V e q é F",
@@ -20,6 +22,7 @@ const questions = [
     }
   },
   {
+    theme: "Lógica Básica",
     text: "(p ∧ q) ↔ r. Se p é V, q é V e r é F, a bicondicional é:",
     options: ["V", "F"],
     correct: "F",
@@ -29,6 +32,7 @@ const questions = [
     }
   },
   {
+    theme: "Saúde Pública",
     text: "Se 'Se uma pessoa é vacinada (p), então ela tem menos chance de adoecer gravemente (q)', qual das alternativas representa corretamente a contrapositiva?",
     options: ["Se não é vacinada, então adoece", "Se adoece gravemente, então não foi vacinada", "Se é vacinada, então não adoece"],
     correct: "Se adoece gravemente, então não foi vacinada",
@@ -39,6 +43,7 @@ const questions = [
     }
   },
   {
+    theme: "Saúde Pública",
     text: "Durante uma campanha de vacinação, foi dito: 'Se todos se vacinarem (p), então a pandemia acaba (q)'. A negação correta dessa frase é:",
     options: ["Todos se vacinam e a pandemia não acaba", "Nem todos se vacinam e a pandemia acaba", "Se ninguém se vacinar, a pandemia continua"],
     correct: "Todos se vacinam e a pandemia não acaba",
@@ -46,6 +51,28 @@ const questions = [
       "Todos se vacinam e a pandemia não acaba": "Correto! A negação de uma implicação é: antecedente verdadeiro e consequente falso.",
       "Nem todos se vacinam e a pandemia acaba": "Errado. Isso não nega a implicação logicamente.",
       "Se ninguém se vacinar, a pandemia continua": "Errado. Isso é uma suposição alternativa, não a negação lógica."
+    }
+  },
+  {
+    theme: "Fake News Políticas",
+    text: "Um político afirma: 'Se eu sou honesto (p), então não existe corrupção (q)'. Qual é a negação lógica dessa afirmação?",
+    options: ["Eu sou honesto e existe corrupção", "Eu não sou honesto e não existe corrupção", "Não é possível negar"],
+    correct: "Eu sou honesto e existe corrupção",
+    feedback: {
+      "Eu sou honesto e existe corrupção": "Correto! É a negação de uma implicação.",
+      "Eu não sou honesto e não existe corrupção": "Errado. Isso não representa a negação direta da implicação.",
+      "Não é possível negar": "Errado. Toda implicação pode ser negada logicamente."
+    }
+  },
+  {
+    theme: "Guerra e Ética",
+    text: "Se 'Se há ameaça (p), então podemos atacar (q)', qual a falácia presente se q é verdadeiro mesmo sem p?",
+    options: ["Afirmação do consequente", "Negação do antecedente", "Nenhuma"],
+    correct: "Afirmação do consequente",
+    feedback: {
+      "Afirmação do consequente": "Correto! Assumir p só porque q ocorreu é falácia.",
+      "Negação do antecedente": "Errado. Isso seria se disséssemos que se p é falso, então q é falso.",
+      "Nenhuma": "Errado. Existe uma falácia clássica nesse raciocínio."
     }
   }
 ];
@@ -56,6 +83,8 @@ let backgroundMusic;
 function displayQuestion() {
   const question = questions[currentQuestionIndex];
   document.getElementById("question").textContent = question.text;
+  document.getElementById("theme-banner").textContent = `🌍 Tema: ${question.theme}`;
+  document.getElementById("avatar-img").src = getAvatarByTheme(question.theme);
 
   const optionsContainer = document.getElementById("options");
   optionsContainer.innerHTML = "";
@@ -72,6 +101,15 @@ function displayQuestion() {
   document.getElementById("feedback").textContent = "";
 }
 
+function getAvatarByTheme(theme) {
+  switch (theme) {
+    case "Fake News Políticas": return "img/avatar-fakenews.png";
+    case "Guerra e Ética": return "img/avatar-war.png";
+    case "Saúde Pública": return "img/avatar-health.png";
+    default: return "img/avatar-default.png";
+  }
+}
+
 function checkAnswer(selected) {
   const question = questions[currentQuestionIndex];
   const feedback = question.feedback[selected];
@@ -84,9 +122,11 @@ function loadNextQuestion() {
     currentQuestionIndex++;
     displayQuestion();
   } else {
-    document.getElementById("question").textContent = "Você completou todas as fases! Parabéns por salvar a vila com lógica!";
+    document.getElementById("theme-banner").textContent = "🏆 Você concluiu todos os desafios lógicos!";
+    document.getElementById("question").textContent = "Parabéns por salvar a vila com lógica e consciência social!";
     document.getElementById("options").innerHTML = "";
     document.getElementById("next-btn").style.display = "none";
+    document.getElementById("avatar-img").src = "img/avatar-default.png";
   }
 }
 
