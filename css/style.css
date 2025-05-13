@@ -1,47 +1,101 @@
 body {
-  background: #1b1b2f;
-  color: #fff;
-  font-family: 'Segoe UI', sans-serif;
-  text-align: center;
+  background-color: black;
+  color: #00ff99;
+  font-family: 'Courier New', monospace;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
-  padding: 20px;
+  padding: 40px;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #00ffcc;
+  text-shadow: 0 0 15px #00ffaa;
+}
+
+.intro-quote {
+  font-style: italic;
+  color: #66ffcc;
+  margin-bottom: 20px;
+  font-size: 1.1em;
 }
 
 #avatar-img {
-  width: 150px;
-  margin: 15px auto;
+  width: 160px;
+  height: auto;
   display: block;
+  margin: 15px auto;
+  filter: drop-shadow(0 0 8px #00ff66);
+  border-radius: 8px;
+  border: 2px solid #00ff88;
+  background-color: rgba(0, 255, 153, 0.05);
+}
+
+#theme-banner {
+  font-size: 1.3em;
+  color: #99ffcc;
+  margin: 10px 0 20px 0;
+  text-shadow: 0 0 10px #009966;
 }
 
 #story-box {
-  margin: 20px 0;
-  padding: 15px;
-  background: #2d2d44;
-  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #00ff99;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px #00ff99;
+}
+
+#story-text {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #d0ffd0;
+}
+
+#choices button {
+  display: block;
+  background-color: transparent;
+  color: #00ff99;
+  border: 2px solid #00ff99;
+  border-radius: 6px;
+  padding: 12px 24px;
+  margin: 10px auto;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px #00ff88;
+}
+
+#choices button:hover {
+  background-color: #003322;
+  color: #ffffff;
+  box-shadow: 0 0 20px #00ffcc;
 }
 
 button {
-  margin: 10px;
-  padding: 10px 20px;
-  background: #007bff;
-  border: none;
-  border-radius: 6px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #0056b3;
+  font-family: 'Courier New', monospace;
 }
 
 .high-contrast {
-  background: black;
-  color: yellow;
+  background-color: #000;
+  color: #FFD700;
 }
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
