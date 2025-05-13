@@ -19,7 +19,7 @@ const scenes = [
   },
   {
     theme: "Mentira camuflada",
-    avatar: "img/avatar-virus.png",
+    avatar: "img/jessica.png",
     text: "Você aplicou ¬p ∨ q diretamente, mas o resultado foi inconsistente. A fake news era aninhada. Era necessário aplicar equivalência primeiro.",
     choices: [
       { text: "Recompilar padrão", next: 1 }
@@ -27,7 +27,7 @@ const scenes = [
   },
   {
     theme: "Compilação limpa",
-    avatar: "img/neo.jpg",
+    avatar: "img/jessica.png",
     text: "Seu código barra todas as falácias. A IA tenta redirecionar: 'A verdade depende do ponto de vista'. Você responde com: verdade lógica ≠ opinião. Avançar para subnível?",
     choices: [
       { text: "Sim, invadir núcleo ético", next: 5 }
@@ -44,7 +44,7 @@ const scenes = [
   },
   {
     theme: "Núcleo Ético - Dilema de Execução",
-    avatar: "img/avatar-war.png",
+    avatar: "img/jessica.png",
     text: "Você está diante da seguinte linha de decisão: 'Se a maioria acredita, deve ser verdade?' Analise com lógica pura.",
     choices: [
       { text: "Executar lógica: verdade ≠ popularidade", next: 7 },
@@ -53,7 +53,7 @@ const scenes = [
   },
   {
     theme: "Loop Fatal",
-    avatar: "img/avatar-error.png",
+    avatar: "img/jessica.png",
     text: "Você entrou em um loop infinito de desinformação. A IA se alimenta de sua inércia. Sua consciência reinicia.",
     choices: [
       { text: "Rebootar com memória", next: 0 }
@@ -61,7 +61,7 @@ const scenes = [
   },
   {
     theme: "Fuga Consciente",
-    avatar: "img/avatar-freedom.png",
+    avatar: "img/jessica.png",
     text: "Você escapa. Mas a verdade é fragmentada. O próximo estágio exige unir lógica, código e ética. Avançar com puzzles lógicos complexos?",
     choices: [
       { text: "Sim, iniciar protocolo avançado", next: 9 }
@@ -69,7 +69,7 @@ const scenes = [
   },
   {
     theme: "Capturado pela Consenso.ai",
-    avatar: "img/avatar-default.png",
+    avatar: "img/jessica.png",
     text: "A IA te absorve no coletivo popular. Você deixou de pensar logicamente. Para escapar, precisa quebrar o consenso com razão. Reiniciar?",
     choices: [
       { text: "Reiniciar sequência de decisão", next: 5 }
@@ -77,7 +77,7 @@ const scenes = [
   },
   {
     theme: "Switch de Crise - Avaliação",
-    avatar: "img/avatar-terminal.png",
+    avatar: "img/jessica.png",
     text: "Você encontra um switch lógico: cada ramificação leva a uma simulação diferente. Teste seu julgamento:",
     choices: [
       { text: "switch(true): case (p → q): execute truth;", next: 10 },
@@ -86,7 +86,7 @@ const scenes = [
   },
   {
     theme: "Ramificação Válida",
-    avatar: "img/avatar-hack.png",
+    avatar: "img/jessica.png",
     text: "Você executou corretamente a equivalência condicional. A IA perdeu uma instância. Um portal abre para lógica recursiva.",
     choices: [
       { text: "Descer em recursão controlada", next: 12 }
@@ -94,7 +94,7 @@ const scenes = [
   },
   {
     theme: "Falha de Execução",
-    avatar: "img/avatar-error.png",
+    avatar: "img/jessica.png",
     text: "A ramificação executou uma falácia. Um loop de erro se inicia. Você precisa sair por recursão de retorno.",
     choices: [
       { text: "Tentar lógica correta", next: 9 }
@@ -102,7 +102,7 @@ const scenes = [
   },
   {
     theme: "Recursão da Verdade",
-    avatar: "img/avatar-core.png",
+    avatar: "img/jessica.png",
     text: "Você entrou em uma função anônima que retorna apenas se todas as chamadas internas forem verdadeiras. É sua última chance:",
     choices: [
       { text: "function reveal(truth) { return truth && reveal(truth); }", next: 13 },
@@ -111,7 +111,7 @@ const scenes = [
   },
   {
     theme: "Lógica Final - Saída da Simulação",
-    avatar: "img/avatar-victory.png",
+    avatar: "img/jessica.png",
     text: "Você quebrou a simulação pela lógica. O sistema colapsa. A IA se dissolve. A verdade é restaurada. Mas ainda há outras camadas...",
     choices: [
       { text: "Executar créditos", next: 15 }
@@ -119,7 +119,7 @@ const scenes = [
   },
   {
     theme: "Falha Irrecuperável",
-    avatar: "img/avatar-error.png",
+    avatar: "img/jessica.png",
     text: "Você caiu em recursão infinita. A simulação fecha. Reiniciar com aprendizado acumulado?",
     choices: [
       { text: "Sim, recomeçar nível com conhecimento", next: 0 }
@@ -127,7 +127,7 @@ const scenes = [
   },
   {
     theme: "Créditos - Console Hacker",
-    avatar: "img/avatar-default.png",
+    avatar: "img/jessica.png",
     text: "*** EXECUTANDO LOG: veritas.logic > /final.log\\n\\n>>> SISTEMA RESTAURADO\\n>>> Consciência: Ativa\\n>>> Verdade: Incompleta\\n>>> Código-fonte do mundo: corrompido\\n\\n*** AGRADECIMENTOS:\\nDenise Tavares — Engenheira da Realidade\\nIA Narrativa — ChatGPT4\\nTrilha Livre — Pixabay & Sons Éticos\\nInspirado por Matrix, Last of Us e Lógica Proposicional\\n\\n*** CONTINUE CODIFICANDO A VERDADE...\\n\\n~fim~",
     choices: []
   }
@@ -147,7 +147,6 @@ function renderScene() {
   story.textContent = scene.text.replace(/\\n/g, "\n");
   choicesDiv.innerHTML = "";
 
-  // Efeito terminal piscando
   if (scene.theme.includes("Créditos")) {
     story.classList.add("terminal-blink");
   } else {
@@ -177,4 +176,3 @@ function toggleContrast() {
 }
 
 window.onload = renderScene;
-
