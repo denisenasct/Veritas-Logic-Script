@@ -12,7 +12,7 @@ const scenes = [
     theme: "Créditos - Console Hacker",
     avatar: "img/avatar-default.png",
     text: "*** EXECUTANDO LOG: veritas.logic > /final.log\n
->>> SISTEMA RESTAURADO\n>>> Consciência: Ativa\n>>> Verdade: Incompleta\n>>> Código-fonte do mundo: corrompido\n\n\n*** AGRADECIMENTOS:\nDenise Tavares — Engenheira da Realidade\nIA Narrativa — ChatGPT4 \nTrilha Livre — Pixabay & Sons Éticos\nInspirado por Matrix, Last of Us e Lógica Proposicional\n\n\n*** CONTINUE CODIFICANDO A VERDADE...\n\n~fim~",
+>>> SISTEMA RESTAURADO\n>>> Consciência: Ativa\n>>> Verdade: Incompleta\n>>> Código-fonte do mundo: corrompido\n\n\n*** AGRADECIMENTOS:\nDenise Tavares — Engenheira da Realidade\nTrilha Livre — Pixabay & Sons Éticos\nInspirado por Matrix, Last of Us e Lógica Proposicional\n\n\n*** CONTINUE CODIFICANDO A VERDADE...\n\n~fim~",
     choices: []
   }
 ];
