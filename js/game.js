@@ -128,7 +128,7 @@ const scenes = [
   {
     theme: "Créditos - Console Hacker",
     avatar: "img/jessica.png",
-    text: "*** EXECUTANDO LOG: veritas.logic > /final.log\n\n>>> SISTEMA RESTAURADO\n>>> Consciência: Ativa\n>>> Verdade: Incompleta\n>>> Código-fonte do mundo: corrompido\n\n*** AGRADECIMENTOS:\nDenise Tavares — Engenheira da Realidade\n\n***Trilha Livre — Pixabay & Sons Éticos\nInspirado por Matrix, Last of Us e Lógica Proposicional\n\n*** CONTINUE CODIFICANDO A VERDADE...\n\n~fim~",
+    text: "*** EXECUTANDO LOG: veritas.logic > /final.log\n\n>>> SISTEMA RESTAURADO\n>>> Consciência: Ativa\n>>> Verdade: Incompleta\n>>> Código-fonte do mundo: corrompido\n\n*** AGRADECIMENTOS:\nEquipe — Engenheiros da Realidade\n\n***Trilha Livre — Pixabay & Sons Éticos\nInspirado por Matrix, Last of Us e Lógica Proposicional\n\n*** CONTINUE CODIFICANDO A VERDADE...\n\n~fim~",
     choices: []
   }
 ];
