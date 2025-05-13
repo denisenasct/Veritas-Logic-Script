@@ -3,30 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Veritas.Logic: A Última Vila</title>
+  <title>Veritas.Logic - Narrativa Lógica</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <div class="container">
     <h1>Veritas.Logic: A Última Vila</h1>
-    <p class="intro">Ensine lógica aos aldeões e derrote a IA manipuladora.</p>
+    <p id="theme-banner">🌍 Capítulo: Introdução</p>
+    <img id="avatar-img" src="img/avatar-default.png" alt="Avatar" />
 
-    <button onclick="toggleContrast()" aria-label="Ativar ou desativar alto contraste">Ativar Alto Contraste</button>
-    <p id="theme-banner">Carregando tema...</p>
-    <img id="avatar-img" src="img/avatar-default.png" alt="Avatar do tema" style="width: 150px; height: auto; margin: 10px auto; display: block;">
-
-    <div class="quiz-box">
-      <p id="question">Carregando pergunta...</p>
-      <div id="options" class="options"></div>
-      <p id="feedback"></p>
+    <div id="story-box">
+      <p id="story-text">Carregando narrativa...</p>
     </div>
 
-    <button id="next-btn" onclick="loadNextQuestion()">Próxima Fase</button>
+    <div id="choices"></div>
+
+    <button onclick="toggleContrast()">Alto Contraste</button>
   </div>
 
-  <audio id="music-fallback" src="music.mp3" autoplay loop hidden></audio>
-  <script src="script.js"></script>
+  <audio src="music.mp3" autoplay loop hidden></audio>
+  <script src="js/game.js"></script>
 </body>
 </html>
+
 
 
