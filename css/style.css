@@ -98,4 +98,17 @@ canvas {
   left: 0;
   z-index: -1;
 }
+.terminal-blink {
+  animation: blinkTerminal 1s steps(2, start) infinite;
+  white-space: pre-wrap;
+  color: #00ff88;
+  font-family: monospace;
+  font-size: 1.1em;
+}
+
+@keyframes blinkTerminal {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
 
