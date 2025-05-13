@@ -51,6 +51,7 @@ const questions = [
 ];
 
 let currentQuestionIndex = 0;
+let backgroundMusic;
 
 function displayQuestion() {
   const question = questions[currentQuestionIndex];
@@ -95,5 +96,18 @@ function playClick() {
   audio.play();
 }
 
-// Inicializa a primeira pergunta
-window.onload = displayQuestion;
+function toggleContrast() {
+  document.body.classList.toggle('high-contrast');
+}
+
+function startMusic() {
+  backgroundMusic = new Audio('music.mp3');
+  backgroundMusic.loop = true;
+  backgroundMusic.volume = 0.2;
+  backgroundMusic.play();
+}
+
+window.onload = () => {
+  displayQuestion();
+  startMusic();
+};
