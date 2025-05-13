@@ -85,12 +85,14 @@ h1 {
   transition: all 0.3s ease;
   text-transform: uppercase;
   box-shadow: 0 0 10px #00ff88;
+  animation: pulseGlow 2s infinite;
 }
 
 #choices button:hover {
   background-color: #003322;
   color: #ffffff;
   box-shadow: 0 0 20px #00ffcc;
+  transform: scale(1.05);
 }
 
 button {
@@ -111,15 +113,18 @@ button {
   100% { opacity: 1; }
 }
 
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 10px #00ff88; }
+  50% { box-shadow: 0 0 20px #00ffcc; }
+  100% { box-shadow: 0 0 10px #00ff88; }
+}
+
 canvas {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   z-index: -1;
-  animation: slowMatrix 0.25s infinite linear;
-}
-
-@keyframes slowMatrix {
-  0% { opacity: 0.9; }
-  100% { opacity: 1; }
+  pointer-events: none;
 }
