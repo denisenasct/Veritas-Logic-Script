@@ -62,8 +62,10 @@ const scenes = [
   {
     theme: "Fuga Consciente",
     avatar: "img/avatar-freedom.png",
-    text: "Você escapa. Mas a verdade é fragmentada. O próximo estágio exige unir lógica, código e ética. A simulação continua...",
-    choices: []
+    text: "Você escapa. Mas a verdade é fragmentada. O próximo estágio exige unir lógica, código e ética. Avançar com puzzles lógicos complexos?",
+    choices: [
+      { text: "Sim, iniciar protocolo avançado", next: 9 }
+    ]
   },
   {
     theme: "Capturado pela Consenso.ai",
@@ -71,6 +73,54 @@ const scenes = [
     text: "A IA te absorve no coletivo popular. Você deixou de pensar logicamente. Para escapar, precisa quebrar o consenso com razão. Reiniciar?",
     choices: [
       { text: "Reiniciar sequência de decisão", next: 5 }
+    ]
+  },
+  {
+    theme: "Switch de Crise - Avaliação",
+    avatar: "img/avatar-terminal.png",
+    text: "Você encontra um switch lógico: cada ramificação leva a uma simulação diferente. Teste seu julgamento:",
+    choices: [
+      { text: "switch(true): case (p → q): execute truth;", next: 10 },
+      { text: "switch(false): case (¬p ∧ q): fallback error;", next: 11 }
+    ]
+  },
+  {
+    theme: "Ramificação Válida",
+    avatar: "img/avatar-hack.png",
+    text: "Você executou corretamente a equivalência condicional. A IA perdeu uma instância. Um portal abre para lógica recursiva.",
+    choices: [
+      { text: "Descer em recursão controlada", next: 12 }
+    ]
+  },
+  {
+    theme: "Falha de Execução",
+    avatar: "img/avatar-error.png",
+    text: "A ramificação executou uma falácia. Um loop de erro se inicia. Você precisa sair por recursão de retorno.",
+    choices: [
+      { text: "Tentar lógica correta", next: 9 }
+    ]
+  },
+  {
+    theme: "Recursão da Verdade",
+    avatar: "img/avatar-core.png",
+    text: "Você entrou em uma função anônima que retorna apenas se todas as chamadas internas forem verdadeiras. É sua última chance:",
+    choices: [
+      { text: "function reveal(truth) { return truth && reveal(truth); }", next: 13 },
+      { text: "function loop(faith) { return loop(faith); }", next: 14 }
+    ]
+  },
+  {
+    theme: "Lógica Final - Saída da Simulação",
+    avatar: "img/avatar-victory.png",
+    text: "Você quebrou a simulação pela lógica. O sistema colapsa. A IA se dissolve. A verdade é restaurada. Mas ainda há outras camadas...",
+    choices: [ ]
+  },
+  {
+    theme: "Falha Irrecuperável",
+    avatar: "img/avatar-error.png",
+    text: "Você caiu em recursão infinita. A simulação fecha. Reiniciar com aprendizado acumulado?",
+    choices: [
+      { text: "Sim, recomeçar nível com conhecimento", next: 0 }
     ]
   }
 ];
