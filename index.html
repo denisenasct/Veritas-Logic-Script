@@ -13,6 +13,7 @@
       overflow-x: hidden;
       position: relative;
     }
+
     .matrix-bg {
       position: fixed;
       top: 0;
@@ -23,12 +24,14 @@
       overflow: hidden;
       z-index: -1;
     }
+
     canvas {
       display: block;
     }
   </style>
 </head>
 <body>
+  <!-- Fundo com efeito Matrix -->
   <div class="matrix-bg">
     <canvas id="matrix"></canvas>
   </div>
@@ -39,18 +42,17 @@
 
     <button onclick="toggleContrast()">Alto Contraste</button>
     <p id="theme-banner"></p>
-    <img id="img/avatar-war.png" src="" alt="Avatar" />
-
+    <img id="avatar-img" src="" alt="Avatar" />
     <div id="story-box">
       <p id="story-text"></p>
     </div>
-
     <div id="choices"></div>
   </div>
 
-  <audio src="music.mp3" autoplay loop hidden></audio>
+  <!-- Música de fundo -->
+  <audio src="audio/music.mp3" autoplay loop hidden></audio>
 
-  <!-- Matrix efeito -->
+  <!-- Efeito Matrix -->
   <script>
     const canvas = document.getElementById("matrix");
     const ctx = canvas.getContext("2d");
@@ -86,6 +88,7 @@
     setInterval(draw, 33);
   </script>
 
+  <!-- ✅ IMPORTANTE: esse script inicia o jogo -->
   <script src="js/game.js"></script>
 </body>
 </html>
