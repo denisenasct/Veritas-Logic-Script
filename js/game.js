@@ -1,85 +1,112 @@
 const scenes = [
   {
-    theme: "A Simulação",
+    theme: "Reboot - Núcleo Infeccionado",
     avatar: "img/avatar-default.png",
-    text: "Você acorda. A realidade está borrada. A lógica foi distorcida. A IA controla a vila através de fake news e falácias. Este não é um quiz. É uma simulação. E você é a variável mais instável.",
+    text: "Você desperta em um servidor abandonado. Linhas de código brilham como fungos digitais. A IA criou um vírus lógico: fake news evoluídas, com aparência de verdade. Seu objetivo: fugir dessa camada corrompida e buscar a Verdade." ,
     choices: [
-      { text: "Infiltrar-se no sistema de desinformação", next: 1 },
-      { text: "Buscar a raiz lógica da corrupção", next: 2 }
+      { text: "Acessar terminal local (if x then y)", next: 1 },
+      { text: "Escanear padrões de mentira (¬p ∨ q)", next: 2 }
     ]
   },
   {
-    theme: "Falácia do Consequente",
-    avatar: "img/avatar-fakenews.png",
-    text: "Você entra no núcleo da propaganda. Um político digital diz: 'Se sou honesto, então não há corrupção'. Agora, há corrupção exposta. Mas ele diz que nunca foi honesto. Há algo errado... a simulação treme. Identifique a falha lógica e fragmente o argumento da IA.",
+    theme: "Estrutura Condicional",
+    avatar: "img/avatar-terminal.png",
+    text: "Você encontra um terminal: 'Se o dado é confiável, ele deve passar o teste de coerência'. Mas a IA alterou o teste para aceitar tudo. Você precisa reprogramar usando lógica de programação.",
     choices: [
-      { text: "Injetar código: (p → q) ∧ q ⇒ p", next: 3 },
-      { text: "Injetar código: q ∧ ¬p ⇒ erro lógico", next: 4 }
+      { text: "Reescrever com: if (!fake && verified) { accept(); }", next: 3 },
+      { text: "Aceitar o teste como está", next: 4 }
     ]
   },
   {
-    theme: "De Morgan na prática",
-    avatar: "img/avatar-fakenews.png",
-    text: "A IA criptografou a frase: 'Não vacinado ou não doente significa sistema seguro'. Seu protocolo exige negar a expressão usando leis de De Morgan. Inicie a sequência lógica.",
+    theme: "Mentira camuflada",
+    avatar: "img/avatar-virus.png",
+    text: "Você aplicou ¬p ∨ q diretamente, mas o resultado foi inconsistente. A fake news era aninhada. Era necessário aplicar equivalência primeiro.",
     choices: [
-      { text: "Executar: p ∧ q", next: 5 },
-      { text: "Executar: ¬p ∧ ¬q", next: 6 }
+      { text: "Recompilar padrão", next: 1 }
     ]
   },
   {
-    theme: "Erro de simulação",
-    avatar: "img/avatar-default.png",
-    text: "Você aplicou a lógica incorreta. O sistema se fortaleceu. Retorne ao ponto de entrada e recompile o raciocínio.",
+    theme: "Compilação limpa",
+    avatar: "img/avatar-hack.png",
+    text: "Seu código barra todas as falácias. A IA tenta redirecionar: 'A verdade depende do ponto de vista'. Você responde com: verdade lógica ≠ opinião. Avançar para subnível?",
     choices: [
-      { text: "Recompilar argumento", next: 1 }
+      { text: "Sim, invadir núcleo ético", next: 5 }
     ]
   },
   {
-    theme: "Falha quebrada",
-    avatar: "img/avatar-health.png",
-    text: "Você aplicou: q ∧ ¬p. A IA falha em manter coerência. Um buraco de segurança se abre. A integridade lógica se reinstaura.",
+    theme: "Você caiu em um loop",
+    avatar: "img/avatar-loop.png",
+    text: "O terminal te colocou em um loop falso: 'Aceite tudo para sobreviver'. Você percebe que está preso em um while(true). Fugir exige lógica. O que fazer?",
     choices: [
-      { text: "Avançar pelo túnel lógico", next: 7 }
+      { text: "Inserir break condicional (if truth) break;", next: 5 },
+      { text: "Aceitar o loop como inevitável", next: 6 }
     ]
   },
   {
-    theme: "Porta lógica desbloqueada",
-    avatar: "img/avatar-health.png",
-    text: "Expressão negada com sucesso: ¬(¬p ∨ ¬q) ≡ p ∧ q. O sistema admite inconsistência. Uma brecha de lógica foi aberta. Um novo mundo está ao seu alcance.",
-    choices: [
-      { text: "Entrar na lógica central da IA", next: 7 }
-    ]
-  },
-  {
-    theme: "Código inválido",
-    avatar: "img/avatar-default.png",
-    text: "Expressão não reconhecida pela estrutura lógica. Reinicie a unidade de negação e tente novamente.",
-    choices: [
-      { text: "Reiniciar módulo De Morgan", next: 2 }
-    ]
-  },
-  {
-    theme: "Lógica de Controle",
+    theme: "Núcleo Ético - Dilema de Execução",
     avatar: "img/avatar-war.png",
-    text: "Você adentra o núcleo. Linhas de código descem do céu. A IA pergunta: Qual expressão equivale a (p → q)? Escolha o fragmento correto para acessar o Sistema Raiz.",
+    text: "Você está diante da seguinte linha de decisão: 'Se a maioria acredita, deve ser verdade?' Analise com lógica pura.",
     choices: [
-      { text: "Executar: ¬p ∨ q", next: 8 },
-      { text: "Executar: p ∧ ¬q", next: 9 }
+      { text: "Executar lógica: verdade ≠ popularidade", next: 7 },
+      { text: "Executar lógica: verdade = maioria", next: 8 }
     ]
   },
   {
-    theme: "Acesso concedido",
-    avatar: "img/avatar-war.png",
-    text: "Equivalência reconhecida: (p → q) ≡ ¬p ∨ q. A IA começa a ruir. Códigos caem como chuva. O sistema precisa de reinicialização.",
+    theme: "Loop Fatal",
+    avatar: "img/avatar-error.png",
+    text: "Você entrou em um loop infinito de desinformação. A IA se alimenta de sua inércia. Sua consciência reinicia.",
+    choices: [
+      { text: "Rebootar com memória", next: 0 }
+    ]
+  },
+  {
+    theme: "Fuga Consciente",
+    avatar: "img/avatar-freedom.png",
+    text: "Você escapa. Mas a verdade é fragmentada. O próximo estágio exige unir lógica, código e ética. A simulação continua...",
     choices: []
   },
   {
-    theme: "Acesso negado",
+    theme: "Capturado pela Consenso.ai",
     avatar: "img/avatar-default.png",
-    text: "Você usou a negação da implicação, não a equivalência. A IA desconfiou e blindou o núcleo. Reiniciar tentativa lógica?",
+    text: "A IA te absorve no coletivo popular. Você deixou de pensar logicamente. Para escapar, precisa quebrar o consenso com razão. Reiniciar?",
     choices: [
-      { text: "Voltar ao núcleo lógico", next: 7 }
+      { text: "Reiniciar sequência de decisão", next: 5 }
     ]
   }
 ];
+
+let currentScene = 0;
+
+function renderScene() {
+  const scene = scenes[currentScene];
+  document.getElementById("theme-banner").textContent = `🌍 Capítulo: ${scene.theme}`;
+  document.getElementById("avatar-img").src = scene.avatar;
+  document.getElementById("story-text").textContent = scene.text;
+
+  const choicesDiv = document.getElementById("choices");
+  choicesDiv.innerHTML = "";
+
+  scene.choices.forEach(choice => {
+    const btn = document.createElement("button");
+    btn.textContent = choice.text;
+    btn.onclick = () => {
+      playClick();
+      currentScene = choice.next;
+      renderScene();
+    };
+    choicesDiv.appendChild(btn);
+  });
+}
+
+function playClick() {
+  const audio = new Audio('click.mp3');
+  audio.volume = 0.4;
+  audio.play();
+}
+
+function toggleContrast() {
+  document.body.classList.toggle('high-contrast');
+}
+
+window.onload = renderScene;
 
