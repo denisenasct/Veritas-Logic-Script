@@ -1,7 +1,7 @@
 const scenes = [
   {
     theme: "Reboot - Núcleo Infeccionado",
-    avatar: "img/avatar-default.png",
+    avatar: "img/neo.jpg",
     text: "Você desperta em um servidor abandonado. Linhas de código brilham como fungos digitais. A IA criou um vírus lógico: fake news evoluídas, com aparência de verdade. Seu objetivo: fugir dessa camada corrompida e buscar a Verdade.",
     choices: [
       { text: "Acessar terminal local (if x then y)", next: 1 },
@@ -10,7 +10,7 @@ const scenes = [
   },
   {
     theme: "Estrutura Condicional",
-    avatar: "img/avatar-terminal.png",
+    avatar: "img/jessica.png",
     text: "Você encontra um terminal: 'Se o dado é confiável, ele deve passar o teste de coerência'. Mas a IA alterou o teste para aceitar tudo. Você precisa reprogramar usando lógica de programação.",
     choices: [
       { text: "Reescrever com: if (!fake && verified) { accept(); }", next: 3 },
@@ -27,7 +27,7 @@ const scenes = [
   },
   {
     theme: "Compilação limpa",
-    avatar: "img/avatar-hack.png",
+    avatar: "img/neo.jpg",
     text: "Seu código barra todas as falácias. A IA tenta redirecionar: 'A verdade depende do ponto de vista'. Você responde com: verdade lógica ≠ opinião. Avançar para subnível?",
     choices: [
       { text: "Sim, invadir núcleo ético", next: 5 }
@@ -35,7 +35,7 @@ const scenes = [
   },
   {
     theme: "Você caiu em um loop",
-    avatar: "img/avatar-loop.png",
+    avatar: "img/jessica.png",
     text: "O terminal te colocou em um loop falso: 'Aceite tudo para sobreviver'. Você percebe que está preso em um while(true). Fugir exige lógica. O que fazer?",
     choices: [
       { text: "Inserir break condicional (if truth) break;", next: 5 },
